@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c4oilo5kqvke0"]
+
+[ext_resource type="Script" uid="uid://d1dpyc1ookcif" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://daxl48xn7g2f7" path="res://Proto/adventurer_tilesheet.png" id="2_6t5aa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
+
+[node name="Player" type="Node2D" unique_id=641765136]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1827251985]
+position = Vector2(0, -56)
+scale = Vector2(2, 2)
+disable_mode = 2
+platform_on_leave = 1
+script = ExtResource("1_cvnsp")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1554712485]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1623501388]
+physics_interpolation_mode = 1
+position = Vector2(0, 3.9999998)
+scale = Vector2(1.594, 1.594)
+shape = SubResource("CapsuleShape2D_vgqql")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1182186354]
+position = Vector2(0, 4.0000005)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6t5aa")
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 122, 155, 107)
